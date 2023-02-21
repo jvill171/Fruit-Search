@@ -23,8 +23,15 @@ function searchHandler(e) {
 
 //List up to the first 5 valid suggestions
 function showSuggestions(results, inputVal) {
+	if(results != 0){
+		input.style.borderRadius = "15px 15px 0 0";
+		input.style.borderBottom = "";
+	}
+	else{
+		input.style.borderRadius = "15px";
+		input.style.borderBottom = "2px solid orangered";
+	}
 	results.every((val, idx) => {
-
 		const newSTRONG = document.createElement("strong")
 		const newLI = document.createElement("li");
 		newLI.classList.add("has-suggestions")
@@ -45,6 +52,9 @@ function showSuggestions(results, inputVal) {
 function useSuggestion(e) {
 	input.value = e.target.innerText;
 	clearSuggestion();
+	
+	input.style.borderRadius = "15px";
+	input.style.borderBottom = "2px solid orangered";
 	
 }
 

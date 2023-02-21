@@ -1,10 +1,16 @@
 * {
   box-sizing: content-box;
   width: 100%;
+  transition: border-radius 0.1s;
 }
 
 :focus {
-  outline: 2px solid orangered;
+  /* outline: 2px solid orangered; */
+  outline:none;
+  border-color: orangered;
+  border-width: 2px;
+  border-style: solid solid none solid;
+  /* border: 2px solid orangered;  */
 }
 
 body {
@@ -16,6 +22,7 @@ input {
   border: orangered 1px solid;
   padding:1rem;
   background-color: rgb(255, 188, 44);
+  border-radius: 15px;
   
 }
 
@@ -34,9 +41,19 @@ ul li {
   list-style: none;
   padding:.6rem 1rem;
   margin:0;
-  transform: translateY(-14px);
+  transform: translateY(-15px);
   text-align: left;
+  border-style: none solid none solid;
+  border-color: orangered;
+  border-width: 2px;
 }
 ul li:hover {
   background-color: orangered;
+}
+
+li:last-child{
+  border-radius: 0 0 15px 15px; 
+  border-style: none solid solid solid;
+  border-color: orangered;
+  border-width: 2px;
 }
