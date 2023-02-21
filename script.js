@@ -20,8 +20,9 @@ function searchHandler(e) {
 	showSuggestions(search(input.value.toLowerCase()), input.value)
 }
 
+//List up to the first 5 valid suggestions
 function showSuggestions(results, inputVal) {
-	results.forEach((val) => {
+	results.every((val, idx) => {
 
 		const newSTRONG = document.createElement("strong")
 		const newLI = document.createElement("li");
@@ -35,6 +36,7 @@ function showSuggestions(results, inputVal) {
 		newLI.append(stylized_suggestion[2])
 
 		suggestions.append(newLI);
+		return idx<4;
 	})
 }
 
